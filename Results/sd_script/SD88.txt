@@ -1,0 +1,3 @@
+@startuml 
+restaurant_manager->System:see weekly_repor 
+@enduml

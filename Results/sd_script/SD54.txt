@@ -1,0 +1,3 @@
+@startuml 
+librarian->book:create information 
+@enduml

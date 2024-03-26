@@ -1,0 +1,4 @@
+@startuml 
+staff_member->System:manage bonds 
+staff_member->project:track bonds lifecycle releas 
+@enduml

@@ -1,0 +1,4 @@
+@startuml 
+ethics_manager->System:informed data 
+ethics_manager->that:check sensitivity 
+@enduml

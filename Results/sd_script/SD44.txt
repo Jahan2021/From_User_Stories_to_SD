@@ -1,0 +1,4 @@
+@startuml 
+member->System:remove reservations 
+member->System:cancel reservation_anytime 
+@enduml

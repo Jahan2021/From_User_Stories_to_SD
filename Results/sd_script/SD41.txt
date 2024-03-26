@@ -1,0 +1,3 @@
+@startuml 
+manager->System:save menu 
+@enduml

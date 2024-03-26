@@ -1,0 +1,3 @@
+@startuml 
+db_ir_administrator->subscriber:see list 
+@enduml

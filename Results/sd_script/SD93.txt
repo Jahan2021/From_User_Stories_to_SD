@@ -1,0 +1,3 @@
+@startuml 
+customer->book:see availability 
+@enduml
