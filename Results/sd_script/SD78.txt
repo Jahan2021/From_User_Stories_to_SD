@@ -1,4 +1,0 @@
-@startuml 
-consumer->System:load datum_package r 
-consumer->System:start i 
-@enduml

@@ -1,4 +1,0 @@
-@startuml 
-researcher->System:link research_publication institutional_repository dmp_record 
-researcher->research_output:generate reports projec 
-@enduml

@@ -1,3 +1,0 @@
-@startuml 
-restaurant_manager->System:create tasks workers labor_management_efficienc 
-@enduml

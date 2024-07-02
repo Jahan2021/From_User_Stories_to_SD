@@ -1,3 +1,0 @@
-@startuml 
-repository_manager->recent_error:see display easy_comprehension 
-@enduml

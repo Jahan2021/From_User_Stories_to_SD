@@ -1,4 +1,0 @@
-@startuml 
-library_staff_member->item:upload large_batch descriptive_metadata 
-library_staff_member->System:offer service authors efficientl 
-@enduml

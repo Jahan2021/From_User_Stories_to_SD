@@ -1,4 +1,0 @@
-@startuml 
-cook->System:items 
-cook->System:inform customer 
-@enduml

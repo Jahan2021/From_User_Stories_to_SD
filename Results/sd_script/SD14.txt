@@ -1,3 +1,0 @@
-@startuml 
-library_staff_member->System:able item collectio 
-@enduml

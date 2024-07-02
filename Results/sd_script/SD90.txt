@@ -1,4 +1,0 @@
-@startuml 
-team_member->System:know related_task sprint 
-team_member->System:assign tasks necessar 
-@enduml

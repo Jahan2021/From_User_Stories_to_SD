@@ -1,3 +1,0 @@
-@startuml 
-zooniverse_admin->area:detect important_feature 
-@enduml

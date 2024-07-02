@@ -1,3 +1,0 @@
-@startuml 
-admin->System:validated contents 
-@enduml

@@ -1,4 +1,0 @@
-@startuml 
-owner->System:design schedule ui_sme 
-owner->System:know 
-@enduml

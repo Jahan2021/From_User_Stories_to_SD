@@ -1,3 +1,0 @@
-@startuml 
-developer->fedora:upgrade applications 
-@enduml

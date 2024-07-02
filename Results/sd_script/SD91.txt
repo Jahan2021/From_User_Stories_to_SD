@@ -1,3 +1,0 @@
-@startuml 
-repoadmin->license:have users license collection licens 
-@enduml

@@ -1,3 +1,0 @@
-@startuml 
-medicalcaregiver->System:locate alfred_use 
-@enduml

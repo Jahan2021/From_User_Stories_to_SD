@@ -1,3 +1,0 @@
-@startuml 
-librarian->System:delete books librar 
-@enduml

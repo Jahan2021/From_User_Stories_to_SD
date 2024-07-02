@@ -1,3 +1,0 @@
-@startuml 
-developer->System:have alfred_api work goal 
-@enduml

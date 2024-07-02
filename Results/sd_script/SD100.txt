@@ -1,4 +1,0 @@
-@startuml 
-user->System:take picture image 
-user->System:recommended videos picture 
-@enduml

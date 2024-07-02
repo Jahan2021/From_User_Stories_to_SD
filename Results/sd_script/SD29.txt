@@ -1,3 +1,0 @@
-@startuml 
-olderperson->System:able training_performanc 
-@enduml

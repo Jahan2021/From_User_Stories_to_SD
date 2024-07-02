@@ -1,4 +1,0 @@
-@startuml 
-p->datum:plan kind store 
-p->System:ensure i 
-@enduml

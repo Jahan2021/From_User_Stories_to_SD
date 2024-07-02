@@ -1,3 +1,0 @@
-@startuml 
-archivist->System:create event_recor 
-@enduml

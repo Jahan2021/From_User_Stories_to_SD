@@ -1,4 +1,0 @@
-@startuml 
-moderator->game:export transcript csv_file 
-moderator->System:process stories 
-@enduml

@@ -1,3 +1,0 @@
-@startuml 
-management_user->employee:see arrival 
-@enduml

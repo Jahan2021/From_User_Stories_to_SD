@@ -1,4 +1,0 @@
-@startuml 
-manager->resource:keep track 
-manager->System:manage inventor 
-@enduml

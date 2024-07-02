@@ -1,4 +1,0 @@
-@startuml 
-developer->System:access broker_application_datum 
-developer->System:investigate issue 
-@enduml

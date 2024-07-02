@@ -1,4 +1,0 @@
-@startuml 
-manager->product:track which most_number 
-manager->System:increase salar 
-@enduml

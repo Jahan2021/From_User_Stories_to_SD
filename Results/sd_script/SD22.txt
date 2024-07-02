@@ -1,4 +1,0 @@
-@startuml 
-agency_user->System:submit datum_element 
-agency_user->System:won strip zeroe 
-@enduml

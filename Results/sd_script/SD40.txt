@@ -1,3 +1,0 @@
-@startuml 
-dam_manager->date_file_format:indicate preservation_manager_aspect integrity 
-@enduml

@@ -1,4 +1,0 @@
-@startuml 
-asset_manager->time:know institution 
-asset_manager->current_value:obtain guidance evaluation 
-@enduml

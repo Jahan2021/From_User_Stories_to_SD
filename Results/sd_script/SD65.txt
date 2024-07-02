@@ -1,3 +1,0 @@
-@startuml 
-archivist->System:create agent_recor 
-@enduml

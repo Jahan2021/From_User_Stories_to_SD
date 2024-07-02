@@ -1,3 +1,0 @@
-@startuml 
-chef->menu_ite:update ingredients 
-@enduml

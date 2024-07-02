@@ -1,3 +1,0 @@
-@startuml 
-chef->menu_ite:update allergy_warning 
-@enduml

@@ -1,3 +1,0 @@
-@startuml 
-user->System:scope searches collection_object specific_languag 
-@enduml

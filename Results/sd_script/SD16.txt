@@ -1,4 +1,0 @@
-@startuml 
-library_member->book:keep track app 
-library_member->System:know 
-@enduml

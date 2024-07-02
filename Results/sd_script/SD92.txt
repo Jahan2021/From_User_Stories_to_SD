@@ -1,3 +1,0 @@
-@startuml 
-employee->System:add new_information myself employee_datu 
-@enduml

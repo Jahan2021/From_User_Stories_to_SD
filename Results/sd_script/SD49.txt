@@ -1,4 +1,0 @@
-@startuml 
-user->System:link email_account profile 
-user->System:get temporary_password own_on 
-@enduml

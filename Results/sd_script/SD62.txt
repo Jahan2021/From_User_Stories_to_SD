@@ -1,3 +1,0 @@
-@startuml 
-member->System:calculate fine returns automaticall 
-@enduml

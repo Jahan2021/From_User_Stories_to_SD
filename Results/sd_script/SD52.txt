@@ -1,3 +1,0 @@
-@startuml 
-manager->System:o orders dat 
-@enduml

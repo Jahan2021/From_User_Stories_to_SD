@@ -1,4 +1,0 @@
-@startuml 
-cornell_faculty_member->item:have control 
-cornell_faculty_member->System:control 
-@enduml

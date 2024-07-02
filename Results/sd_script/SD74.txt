@@ -1,3 +1,0 @@
-@startuml 
-repository_manager->System:indicate names collection creator_source 
-@enduml

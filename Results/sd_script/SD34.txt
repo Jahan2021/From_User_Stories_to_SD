@@ -1,4 +1,0 @@
-@startuml 
-sponsor->System:post job 
-sponsor->System:hire drupal_talen 
-@enduml
