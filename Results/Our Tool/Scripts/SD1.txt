@@ -1,0 +1,4 @@
+@startuml 
+zoning_staff_member->zoning_information:process requests 
+zoning_staff_member->request:capture response communication system applicant 
+@enduml

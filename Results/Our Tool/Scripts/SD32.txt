@@ -1,0 +1,4 @@
+@startuml 
+researcher->institutional_repository:research_publication 
+researcher->research_output:generate reports project 
+@enduml

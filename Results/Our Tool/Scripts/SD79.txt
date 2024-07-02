@@ -1,0 +1,3 @@
+@startuml 
+librarian->System:add new_book list 
+@enduml

@@ -1,0 +1,4 @@
+@startuml 
+plan_review_staff_member->System:plans 
+plan_review_staff_member->System:review them compliance plans condition_clearance applicant 
+@enduml

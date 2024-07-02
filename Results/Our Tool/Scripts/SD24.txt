@@ -1,0 +1,4 @@
+@startuml 
+admin->System:handle user_activity 
+admin->System:manage 
+@enduml

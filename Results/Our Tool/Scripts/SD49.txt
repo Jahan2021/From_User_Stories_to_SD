@@ -1,0 +1,4 @@
+@startuml 
+user->System:link email_account profile 
+user->System:get _password own_one 
+@enduml

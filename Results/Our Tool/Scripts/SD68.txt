@@ -1,0 +1,4 @@
+@startuml 
+manager->resource:keep track 
+manager->System:manage inventory 
+@enduml

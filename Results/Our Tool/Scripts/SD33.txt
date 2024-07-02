@@ -1,0 +1,4 @@
+@startuml 
+attendee->System:get detailed_direction summit_venue 
+attendee->event:get summit day 
+@enduml

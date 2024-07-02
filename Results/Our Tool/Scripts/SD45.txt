@@ -1,0 +1,3 @@
+@startuml 
+librarian->book_information:update pages 
+@enduml

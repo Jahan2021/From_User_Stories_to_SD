@@ -1,0 +1,4 @@
+@startuml 
+p->datum:plan kind store 
+p->System:ensure it 
+@enduml

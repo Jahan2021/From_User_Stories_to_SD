@@ -1,0 +1,3 @@
+@startuml 
+admin->copyright_infringement:validated contents 
+@enduml

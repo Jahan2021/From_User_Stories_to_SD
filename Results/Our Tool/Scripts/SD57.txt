@@ -1,0 +1,4 @@
+@startuml 
+archivist->index_card:access metadata 
+archivist->System:use information researchers 
+@enduml

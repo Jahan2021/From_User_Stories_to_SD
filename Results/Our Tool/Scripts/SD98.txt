@@ -1,0 +1,3 @@
+@startuml 
+digitalrecord_archivist->etd_item:expose descriptive_record use fedora 
+@enduml

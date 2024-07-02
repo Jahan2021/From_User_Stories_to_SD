@@ -1,0 +1,3 @@
+@startuml 
+employee->System:add new_information myself employee_datum 
+@enduml

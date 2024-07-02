@@ -1,0 +1,4 @@
+@startuml 
+user->System:able email_id 
+user->new_event:receive notifications 
+@enduml

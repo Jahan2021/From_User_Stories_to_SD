@@ -1,0 +1,3 @@
+@startuml 
+restaurant_employee->System:receive notification_message order 
+@enduml

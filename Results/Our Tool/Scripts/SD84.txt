@@ -1,0 +1,4 @@
+@startuml 
+library_manager->System:know 
+library_manager->book:bring further_copy 
+@enduml

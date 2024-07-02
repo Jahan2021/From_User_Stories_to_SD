@@ -1,0 +1,3 @@
+@startuml 
+dam_manager->file_size_creation:indicate preservation integrity 
+@enduml

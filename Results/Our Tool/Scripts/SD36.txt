@@ -1,0 +1,4 @@
+@startuml 
+archivist->researcher_publication:link electronic_version citations 
+archivist->System:share them other_researcher 
+@enduml

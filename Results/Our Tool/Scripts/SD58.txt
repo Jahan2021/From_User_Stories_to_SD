@@ -1,0 +1,4 @@
+@startuml 
+chef->System:create dishes 
+chef->System:follow customer_comment 
+@enduml

@@ -1,0 +1,4 @@
+@startuml 
+researcher->document:information 
+researcher->System:cite publication 
+@enduml

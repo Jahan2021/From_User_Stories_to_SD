@@ -1,0 +1,4 @@
+@startuml 
+cook->store_order:keep track 
+cook->System:schedule orders 
+@enduml
