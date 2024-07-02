@@ -1,0 +1,2037 @@
+ID,File Name,Project Name,User story,GPT Generated seq in PlantUML format,QE1(Our Tool),QE2 (Our Tool),QE3 (Our Tool),QE4 (Our Tool),QE5 (Our Tool),QE1 (GPT),QE2 (GPT),QE3 (GPT),QE4 (GPT),QE5 (GPT)
+1,g03-loudoun.txt,loudoun,"As a Zoning Staff member, I want to Process the Requests for Zoning Information, so that I can capture my response to the request in the system and also send a communication from the system to the Applicant.","@startuml
+actor ZoningStaff
+actor System
+actor Applicant
+
+ZoningStaff -> System: Submit Zoning Request
+System -> System: Capture Request Details
+System -> ZoningStaff: Acknowledge Receipt
+
+activate ZoningStaff
+
+loop until request processed
+    ZoningStaff -> System: Process Request
+    System -> System: Update Zoning Information
+    System -> Applicant: Send Communication
+    Applicant -> System: Receive Communication
+    System -> ZoningStaff: Notify Completion
+end
+
+deactivate ZoningStaff
+
+@enduml
+",y,9,8,10,y,y,10,10,10,y
+2,User Stories for Restaurant Management System.txt,Restaurant Management System,"As a cook, I want to keep track of store orders so that I can schedule orders.","@startuml
+actor Cook
+actor System
+actor Store
+
+Cook -> System: Place Order
+System -> System: Record Order Details
+System -> Store: Send Order
+Store -> System: Confirm Order Received
+
+activate System
+
+loop until all orders scheduled
+    System -> System: Schedule Order
+    System -> Cook: Provide Schedule
+end
+
+deactivate System
+
+@enduml
+",y,7,7,5,n,y,10,10,10,y
+3,g19-alfred.txt,alfred,"As an OlderPerson, I want to use ALFRED to control the heating.","@startuml
+actor OlderPerson
+actor ALFRED
+
+OlderPerson -> ALFRED: Activate Heating Control
+ALFRED -> ALFRED: Authenticate User
+ALFRED -> ALFRED: Retrieve User Preferences
+ALFRED -> ALFRED: Check Current Temperature
+ALFRED -> ALFRED: Display Heating Options
+
+activate OlderPerson
+
+OlderPerson -> ALFRED: Set Desired Temperature
+ALFRED -> ALFRED: Adjust Heating Settings
+ALFRED -> ALFRED: Confirm Settings Updated
+ALFRED -> ALFRED: Activate Heating System
+
+deactivate OlderPerson
+
+@enduml
+",y,3,3,3,n,y,10,10,10,y
+4,User Stories for Restaurant Management System.txt,Restaurant Management System,"As an employee, I want to see all store orders.","@startuml
+actor Employee
+actor System
+actor Store
+
+Employee -> System: Log In
+System -> System: Authenticate Employee
+System -> Employee: Provide Access
+
+activate Employee
+
+Employee -> System: View All Store Orders
+System -> System: Retrieve Orders Data
+System -> Employee: Display Orders
+
+deactivate Employee
+
+@enduml
+",y,6,5,4,y,y,7,8,7,n
+5,g05-openspending.txt,openspending,"As a Data Consuming User, I want to be able to search any dataset published and publicly accessible by their title and metadata, So that I can find the datasets I'm interested in.","@startuml
+actor User
+actor System
+database DatasetRepository
+
+User -> System: Perform Search (by title and metadata)
+System -> DatasetRepository: Search Datasets
+DatasetRepository -> System: Return Search Results
+System -> User: Display Search Results
+
+activate User
+
+User -> System: Select Dataset
+System -> DatasetRepository: Retrieve Dataset Details
+DatasetRepository -> System: Provide Dataset Details
+System -> User: Display Dataset Information
+
+deactivate User
+
+@enduml
+",y,5,4,8,y,y,10,10,10,y
+6,User Stories for Library Management System.txt,Library Management System,"As a library member, I want to locate related books and see the shelf number in the library by using unique information to speed up the searching process.","@startuml
+actor LibraryMember
+actor System
+database LibraryCatalog
+
+LibraryMember -> System: Log In
+System -> System: Authenticate Library Member
+System -> LibraryCatalog: Search for Related Books
+LibraryCatalog --> System: Return Search Results
+System -> LibraryMember: Display Search Results
+
+activate LibraryMember
+
+LibraryMember -> System: Select Book
+System -> LibraryCatalog: Retrieve Shelf Number
+LibraryCatalog --> System: Return Shelf Number
+System -> LibraryMember: Display Shelf Number
+
+deactivate LibraryMember
+
+@enduml
+",y,4,4,4,y,y,10,10,10,y
+7,g05-openspending.txt,openspending,"As an API User, I want to be able to use data to get results from multiple datasets, So that I can build user experiences based on more than one dataset more easily.","@startuml
+actor APIUser
+actor System
+database Dataset1
+database Dataset2
+
+APIUser -> System: Request Data from Multiple Datasets
+System -> Dataset1: Retrieve Data from Dataset1
+Dataset1 --> System: Return Data from Dataset1
+System -> Dataset2: Retrieve Data from Dataset2
+Dataset2 --> System: Return Data from Dataset2
+System --> APIUser: Return Combined Results
+
+@enduml
+",y,8,7,6,y,y,9,8,8,y
+8,User Stories for Restaurant Management System.txt,Restaurant Management System,"As a customer, I want to be able to pay the bill partially","@startuml
+actor Customer
+actor System
+database BillingSystem
+
+Customer -> System: Initiate Partial Payment
+System -> BillingSystem: Retrieve Bill Details
+BillingSystem --> System: Return Bill Details
+System -> Customer: Display Bill Details
+
+activate Customer
+
+Customer -> System: Enter Partial Payment Amount
+System -> BillingSystem: Process Partial Payment
+BillingSystem --> System: Confirmation
+System -> Customer: Display Payment Confirmation
+
+deactivate Customer
+
+@enduml
+",n,5,7,7,y,y,10,10,10,y
+9,User Stories for Restaurant Management System.txt,Restaurant Management System,"As a cook, I want to have employee data on the system including clock in and out information.","@startuml
+actor Cook
+actor System
+database EmployeeDatabase
+
+Cook -> System: Log In
+System -> System: Authenticate Cook
+System -> EmployeeDatabase: Retrieve Employee Data
+EmployeeDatabase --> System: Return Employee Data
+System -> Cook: Display Employee Data
+
+activate Cook
+
+Cook -> System: Clock In
+System -> EmployeeDatabase: Update Clock In Information
+EmployeeDatabase --> System: Confirmation
+System -> Cook: Display Clock In Confirmation
+
+Cook -> System: Clock Out
+System -> EmployeeDatabase: Update Clock Out Information
+EmployeeDatabase --> System: Confirmation
+System -> Cook: Display Clock Out Confirmation
+
+deactivate Cook
+
+@enduml
+",y,8,7,5,y,y,9,8,8,y
+10,g03-loudoun.txt,loudoun,"As a Plan Review Staff member, I want to Review Plans, so that I can review them for compliance and either approve, or fail or deny the plans and record any conditions, clearances, or corrections needed from the Applicant.","@startuml
+actor PlanReviewStaff
+actor System
+actor Applicant
+
+PlanReviewStaff -> System: Log In
+System -> System: Authenticate Plan Review Staff
+System -> PlanReviewStaff: Provide Access
+
+activate PlanReviewStaff
+
+PlanReviewStaff -> System: Retrieve Plans for Review
+System -> System: Fetch Plan Details
+System -> PlanReviewStaff: Display Plan Details
+
+loop until review complete
+    PlanReviewStaff -> System: Review Plan Compliance
+    System -> PlanReviewStaff: Provide Review Feedback
+
+    alt Approval
+        PlanReviewStaff -> System: Approve Plan
+        System -> System: Record Approval
+    else Denial
+        PlanReviewStaff -> System: Deny Plan
+        System -> System: Record Denial
+        PlanReviewStaff -> Applicant: Notify Conditions, Clearances, or Corrections Needed
+    end
+
+end
+
+deactivate PlanReviewStaff
+
+@enduml
+",y,9,8,7,y,y,7,8,7,n
+11,g27-culrepo.txt,culrepo,"As a patron, I want to know previous name(s) and publication date range (first version-last version) of reports/datasets, so that I can know what historical versions are available and how current more recent version is.","@startuml
+actor Patron
+actor System
+database ReportsDatabase
+
+Patron -> System: Log In
+System -> System: Authenticate Patron
+System -> ReportsDatabase: Retrieve Report/Dataset History
+ReportsDatabase --> System: Return History Information
+System -> Patron: Display Report/Dataset History
+
+@enduml
+",y,10,8,6,y,y,10,10,10,y
+12,g25-duraspace.txt,duraspace,"As a user, I want to scope my searches for collections, objects, or object components to a specific language.","@startuml
+actor User
+actor System
+database SearchDatabase
+
+User -> System: Log In
+System -> System: Authenticate User
+System -> User: Provide Access
+
+activate User
+
+User -> System: Set Search Language
+System -> System: Save Language Preference
+
+loop until search is complete
+    User -> System: Enter Search Query
+    System -> SearchDatabase: Search in Selected Language
+    SearchDatabase --> System: Return Search Results
+    System -> User: Display Search Results
+end
+
+deactivate User
+
+@enduml
+",y,10,6,6,y,y,9,8,8,n
+13,g19-alfred.txt,alfred,"As a MedicalCaregiver, I want to locate the ALFRED user.","@startuml
+actor MedicalCaregiver
+actor System
+actor ALFRED
+
+MedicalCaregiver -> System: Log In
+System -> System: Authenticate Medical Caregiver
+System -> ALFRED: Locate User
+ALFRED --> System: Return User Location
+System -> MedicalCaregiver: Display User Location
+
+@enduml",y,8,8,6,n,y,9,9,9,y
+14,g27-culrepo.txt,culrepo,"As a library staff member, I want to be able to assign an item to more than one collection.","@startuml
+actor LibraryStaff
+actor System
+database LibraryDatabase
+
+LibraryStaff -> System: Log In
+System -> System: Authenticate LibraryStaff
+System -> LibraryStaff: Provide Access
+
+activate LibraryStaff
+
+LibraryStaff -> System: Select Item to Assign
+System -> LibraryDatabase: Retrieve Item Details
+LibraryDatabase --> System: Return Item Details
+System -> LibraryStaff: Display Item Details
+
+LibraryStaff -> System: Select Collections
+System -> System: Retrieve Available Collections
+System -> LibraryStaff: Display Available Collections
+
+loop until assignment complete
+    LibraryStaff -> System: Assign Item to Collection
+    System -> LibraryDatabase: Update Collection Assignment
+    LibraryDatabase --> System: Confirmation
+    System -> LibraryStaff: Display Assignment Confirmation
+end
+
+deactivate LibraryStaff
+
+@enduml
+",y,8,5,5,n,y,10,8,9,y
+15,g25-duraspace.txt,duraspace,"As a repository manager, I want to indicate any name that is pertinent to the component.","@startuml
+actor RepositoryManager
+actor System
+database RepositoryDatabase
+
+RepositoryManager -> System: Log In
+System -> System: Authenticate RepositoryManager
+System -> RepositoryManager: Provide Access
+
+activate RepositoryManager
+
+RepositoryManager -> System: Select Component
+System -> RepositoryDatabase: Retrieve Component Details
+RepositoryDatabase --> System: Return Component Details
+System -> RepositoryManager: Display Component Details
+
+RepositoryManager -> System: Add Pertinent Name
+System -> RepositoryDatabase: Update Component Name
+RepositoryDatabase --> System: Confirmation
+System -> RepositoryManager: Display Update Confirmation
+
+deactivate RepositoryManager
+
+@enduml
+",y,8,6,6,n,y,10,9,9,y
+16,User Stories for Library Management System.txt,Library Management System,"As a library member, I want to keep track of books from an app so that I can know if it is taken or in the library before I go.","@startuml
+actor LibraryMember
+actor System
+database LibraryCatalog
+
+LibraryMember -> System: Log In
+System -> System: Authenticate LibraryMember
+System -> LibraryMember: Provide Access
+
+activate LibraryMember
+
+LibraryMember -> System: Search for Book
+System -> LibraryCatalog: Retrieve Book Information
+LibraryCatalog --> System: Return Book Information
+System -> LibraryMember: Display Book Information
+
+LibraryMember -> System: Check Book Availability
+System -> LibraryCatalog: Retrieve Availability Status
+LibraryCatalog --> System: Return Availability Status
+System -> LibraryMember: Display Availability Status
+
+deactivate LibraryMember
+
+@enduml
+",y,10,9,7,y,y,9,8,7,n
+17,User Stories for Restaurant Management System.txt,Restaurant Management System,"As a restaurant employee, I want to receive a notification message when the customer places an order.","@startuml
+actor Customer
+actor RestaurantEmployee
+actor System
+
+Customer -> System: Place Order
+System -> RestaurantEmployee: Notify New Order
+
+activate RestaurantEmployee
+
+RestaurantEmployee -> System: Acknowledge Notification
+System -> Customer: Order Acknowledgment
+
+deactivate RestaurantEmployee
+
+@enduml
+",y,7,6,6,y,y,10,10,10,y
+18,User Stories for Library Management System.txt,Library Management System,"As a student, I want to see the books that are currently unavailable so that I can arrange my reading plan.","@startuml
+actor Student
+actor System
+database LibraryCatalog
+
+Student -> System: Log In
+System -> System: Authenticate Student
+System -> Student: Provide Access
+
+activate Student
+
+Student -> System: View Unavailable Books
+System -> LibraryCatalog: Retrieve Unavailable Books
+LibraryCatalog --> System: Return Unavailable Books
+System -> Student: Display Unavailable Books
+
+deactivate Student
+
+@enduml
+",y,10,8,7,y,y,10,10,10,y
+19,g27-culrepo.txt,culrepo,"As an asset manager, I want to know what the intellectual value of the asset is to the institution at the time of deposit, so that I obtain guidance in the evaluation of it for current value for the institution.","@startuml
+actor AssetManager
+actor System
+database InstitutionalKnowledgeBase
+
+AssetManager -> System: Log In
+System -> System: Authenticate AssetManager
+System -> AssetManager: Provide Access
+
+activate AssetManager
+
+AssetManager -> System: Deposit Asset
+System -> AssetManager: Provide Metadata Entry
+AssetManager -> System: Evaluate Intellectual Value
+System -> InstitutionalKnowledgeBase: Store Intellectual Value
+InstitutionalKnowledgeBase --> System: Confirmation
+System -> AssetManager: Display Intellectual Value Confirmation
+
+deactivate AssetManager
+
+@enduml
+",y,10,8,9,y,y,10,7,8,y
+20,g25-duraspace.txt,duraspace,"As a DAMS manager, I want to know the agent(s) responsible for carrying out an event.","@startuml
+actor DAMSManager
+actor System
+database EventLog
+
+DAMSManager -> System: Log In
+System -> System: Authenticate DAMSManager
+System -> DAMSManager: Provide Access
+
+activate DAMSManager
+
+DAMSManager -> System: Search for Event
+System -> EventLog: Retrieve Event Details
+EventLog --> System: Return Event Details
+System -> DAMSManager: Display Event Details
+
+deactivate DAMSManager
+
+@enduml
+",y,8,6,6,n,y,10,10,10,y
+21,g02-federalspending.txt,federalspending,"As a Developer I want to quickly access Broker application data, so that I can investigate issues.","@startuml
+actor Developer
+actor System
+database BrokerApplicationDatabase
+
+Developer -> System: Log In
+System -> System: Authenticate Developer
+System -> Developer: Provide Access
+
+activate Developer
+
+Developer -> System: Search for Data
+System -> BrokerApplicationDatabase: Retrieve Data
+BrokerApplicationDatabase --> System: Return Data
+System -> Developer: Display Data
+
+deactivate Developer
+
+@enduml
+",y,9,7,7,y,y,10,10,10,y
+22,g02-federalspending.txt,federalspending,"As an agency user, I want to submit my data elements surrounded by quotation marks, so that Excel won't strip off leading and trailing zeroes.","@startuml
+actor AgencyUser
+actor Excel
+
+AgencyUser -> Excel: Open Data File
+Excel -> Excel: Format Data Elements\nwith Quotation Marks
+Excel --> AgencyUser: Data File Ready
+
+@enduml
+",y,9,8,8,y,y,10,10,10,y
+23,g19-alfred.txt,alfred,"As a developer, I want to have the ALFRED API to reduce the work to achieve my goals.","@startuml
+actor Developer
+actor ALFRED
+database DataStorage
+
+Developer -> ALFRED: API Request
+ALFRED -> ALFRED: Process API Request
+ALFRED -> DataStorage: Retrieve Data
+DataStorage --> ALFRED: Return Data
+ALFRED --> Developer: Provide API Response
+
+@enduml
+",y,8,6,5,n,y,9,10,10,y
+24,g04-recycling.txt,recycling,"As an admin, I want to handle all users' activities, so that I can manage more efficiently.","@startuml
+actor Admin
+actor System
+database UserActivityLog
+
+Admin -> System: Log In
+System -> System: Authenticate Admin
+System -> Admin: Provide Access
+
+activate Admin
+
+Admin -> System: View Users' Activities
+System -> UserActivityLog: Retrieve User Activities
+UserActivityLog --> System: Return User Activities
+System -> Admin: Display User Activities
+
+deactivate Admin
+
+@enduml
+",y,8,7,6,y,y,10,10,10,y
+25,g16-mis.txt,mis,"As a developer, I want to upgrade to Fedora 4 and migrate our applications and data.","@startuml
+actor Developer
+actor System
+database LegacyData
+database NewDatastore
+
+Developer -> System: Plan Upgrade
+System -> Developer: Provide Upgrade Plan
+Developer -> System: Begin Upgrade Process
+
+activate Developer
+
+Developer -> System: Update Applications
+System -> System: Stop Legacy Services
+System -> System: Install Fedora 4
+System -> System: Configure Fedora 4
+System -> System: Start Fedora 4 Services
+System -> System: Update Applications for Fedora 4
+
+Developer -> LegacyData: Migrate Data
+LegacyData --> NewDatastore: Export Data
+NewDatastore --> Developer: Data Export Complete
+Developer -> NewDatastore: Import Data
+NewDatastore --> Developer: Data Import Complete
+
+deactivate Developer
+
+@enduml
+",y,8,4,4,n,y,8,5,5,n
+26,g04-recycling.txt,recycling,"As an employee, I want to access the route planning system during work, so that I can be guided through the neighbourhood.","@startuml
+actor Employee
+actor System
+database RoutePlanningDatabase
+
+Employee -> System: Log In
+System -> System: Authenticate Employee
+System -> Employee: Provide Access
+
+activate Employee
+
+Employee -> System: Request Route
+System -> RoutePlanningDatabase: Retrieve Route Details
+RoutePlanningDatabase --> System: Return Route Details
+System -> Employee: Display Route Details
+
+deactivate Employee
+
+@enduml
+",y,7,6,6,y,y,10,10,10,y
+27,g28-zooniverse.txt,zooniverse,"As a Zooniverse admin, I want to detect important features such as areas of flooding, damage, temporary shelters, blocked roads etc in the satellite images.","@startuml
+actor ZooniverseAdmin
+actor System
+database ImageDatabase
+
+ZooniverseAdmin -> System: Log In
+System -> System: Authenticate ZooniverseAdmin
+System -> ZooniverseAdmin: Provide Access
+
+activate ZooniverseAdmin
+
+ZooniverseAdmin -> System: Upload Satellite Image
+System -> System: Process Image
+System -> ImageDatabase: Store Processed Image
+ImageDatabase --> System: Image Processing Complete
+System -> ZooniverseAdmin: Display Processed Image
+
+deactivate ZooniverseAdmin
+
+@enduml
+",y,10,4,4,n,y,10,9,9,y
+28,User Stories for Library Management System.txt,Library Management System,"As a librarian, I want to delete books from the library.","@startuml
+actor Librarian
+actor System
+database LibraryCatalog
+
+Librarian -> System: Log In
+System -> System: Authenticate Librarian
+System -> Librarian: Provide Access
+
+activate Librarian
+
+Librarian -> System: Search for Book to Delete
+System -> LibraryCatalog: Retrieve Book Information
+LibraryCatalog --> System: Return Book Information
+System -> Librarian: Display Book Information
+
+Librarian -> System: Delete Book
+System -> LibraryCatalog: Remove Book Record
+LibraryCatalog --> System: Confirmation
+System -> Librarian: Display Deletion Confirmation
+
+deactivate Librarian
+
+@enduml
+",y,10,10,10,y,y,8,6,6,n
+29,g19-alfred.txt,alfred,"As an OlderPerson, I want to be able to see my training Performance.","@startuml
+actor OlderPerson
+actor System
+database TrainingDatabase
+
+OlderPerson -> System: Log In
+System -> System: Authenticate OlderPerson
+System -> OlderPerson: Provide Access
+
+activate OlderPerson
+
+OlderPerson -> System: View Training Performance
+System -> TrainingDatabase: Retrieve Performance Data
+TrainingDatabase --> System: Return Performance Data
+System -> OlderPerson: Display Performance Data
+
+deactivate OlderPerson
+
+@enduml
+",n,10,4,4,n,y,10,10,10,y
+30,g02-federalspending.txt,federalspending,"As an Agency user, I want to be able to include a large number of flexfields without performance impact.","@startuml
+actor AgencyUser
+actor System
+database FlexfieldsDatabase
+
+AgencyUser -> System: Log In
+System -> System: Authenticate AgencyUser
+System -> AgencyUser: Provide Access
+
+activate AgencyUser
+
+AgencyUser -> System: Include Flexfields
+System -> FlexfieldsDatabase: Retrieve Flexfields Configuration
+FlexfieldsDatabase --> System: Return Flexfields Configuration
+System -> System: Process Flexfields
+System -> System: Apply Optimizations
+System -> AgencyUser: Display Flexfields
+
+deactivate AgencyUser
+
+@enduml
+",y,10,4,4,n,y,10,10,10,y
+31,g13-planningpoker.txt,planningpoker,"As a moderator, I want to enter the agreed-upon estimate, so that we can move on to the next item when we agree.","@startuml
+actor Moderator
+actor System
+
+Moderator -> System: Enter Agreed-Upon Estimate
+System -> System: Record Estimate
+System --> Moderator: Confirmation Message
+
+@enduml
+",y,10,9,9,y,y,10,10,10,y
+32,g22-rdadmp.txt,rdadmp,"As a researcher, I want to record research publications in the institutional repository or CRIS with DMP records, so that I can generate reports of research output resulting from a project.","@startuml
+actor Researcher
+actor System
+database Repository
+
+Researcher -> System: Log In
+System -> System: Authenticate Researcher
+System -> Researcher: Provide Access
+
+activate Researcher
+
+Researcher -> System: Record Research Publication
+System -> System: Validate and Process Data
+System -> Repository: Save Publication Record
+Repository --> System: Confirmation
+System -> Researcher: Display Confirmation
+
+Researcher -> System: Record DMP for Project
+System -> System: Validate and Process DMP
+System -> Repository: Link DMP to Project
+Repository --> System: Confirmation
+System -> Researcher: Display Confirmation
+
+deactivate Researcher
+
+@enduml
+",y,10,8,6,y,y,10,9,9,y
+33,g21-badcamp.txt,badcamp,"As a attendee, I want to get detailed directions to the summit venue, so that I can get to the summit easily on the day of the event.","@startuml
+actor Attendee
+actor System
+database MapDatabase
+
+Attendee -> System: Request Directions to Summit Venue
+System -> MapDatabase: Retrieve Venue Details and Map
+MapDatabase --> System: Return Venue Details and Map
+System -> Attendee: Display Venue Details and Map
+
+@enduml
+",y,9,9,7,y,y,9,9,8,y
+34,g21-badcamp.txt,badcamp,"As a sponsor, I want to post a job, so that I can hire top-tier Drupal talent.","@startuml
+actor Sponsor
+actor System
+database JobDatabase
+
+Sponsor -> System: Log In
+System -> System: Authenticate Sponsor
+System -> Sponsor: Provide Access
+
+activate Sponsor
+
+Sponsor -> System: Post Job
+System -> System: Validate Job Posting
+System -> JobDatabase: Save Job Posting
+JobDatabase --> System: Confirmation
+System -> Sponsor: Display Confirmation
+
+deactivate Sponsor
+
+@enduml
+",y,9,7,6,y,y,8,7,6,n
+35,g13-planningpoker.txt,planningpoker,"As a moderator, I want to export a transcript of a game as a CSV file, so that I can further process the stories and estimates.","@startuml
+actor Moderator
+actor System
+database GameTranscript
+
+Moderator -> System: Log In
+System -> System: Authenticate Moderator
+System -> Moderator: Provide Access
+
+activate Moderator
+
+Moderator -> System: Export Game Transcript as CSV
+System -> GameTranscript: Retrieve Game Data
+GameTranscript --> System: Return Game Data
+System -> System: Convert Data to CSV
+System -> Moderator: Provide CSV File for Download
+
+deactivate Moderator
+
+@enduml
+",y,10,8,6,y,y,10,10,10,y
+36,g26-racdam.txt,racdam,"As an archivist, I want to link electronic versions of researchers' publications to citations, so that I can share them with other researchers.","@startuml
+actor Archivist
+actor System
+database CitationDatabase
+database ElectronicVersionsDatabase
+
+Archivist -> System: Log In
+System -> System: Authenticate Archivist
+System -> Archivist: Provide Access
+
+activate Archivist
+
+Archivist -> System: Link Electronic Version to Citation
+System -> CitationDatabase: Retrieve Citation Details
+CitationDatabase --> System: Return Citation Details
+System -> ElectronicVersionsDatabase: Retrieve Electronic Version
+ElectronicVersionsDatabase --> System: Return Electronic Version
+System -> System: Associate Electronic Version with Citation
+System -> Archivist: Display Linking Confirmation
+
+deactivate Archivist
+
+@enduml
+",y,10,9,9,y,y,10,8,8,y
+37,g16-mis.txt,mis,"As a repoadmin, I want to have Symplectic Elements to communicate","@startuml
+actor RepoAdmin
+actor SymplecticElements
+database ResearchInformation
+
+RepoAdmin -> SymplecticElements: Log In
+SymplecticElements -> SymplecticElements: Authenticate RepoAdmin
+SymplecticElements -> RepoAdmin: Provide Access
+
+activate RepoAdmin
+
+RepoAdmin -> SymplecticElements: Update Research Information
+SymplecticElements -> SymplecticElements: Validate and Process Data
+SymplecticElements -> ResearchInformation: Update Database
+ResearchInformation --> SymplecticElements: Confirmation
+SymplecticElements -> RepoAdmin: Display Update Confirmation
+
+deactivate RepoAdmin
+
+@enduml
+",y,10,10,10,y,y,7,6,6,n
+38,g22-rdadmp.txt,rdadmp,"As a researcher, I want the DMP to prepopulate information that I have already entered in other institutional systems, so that I do not have to re-enter information ensuring the DMP contains accurate and standardized information.","@startuml
+actor Researcher
+actor DMPSystem
+database InstitutionalSystems
+
+Researcher -> DMPSystem: Log In
+DMPSystem -> DMPSystem: Authenticate Researcher
+DMPSystem -> Researcher: Provide Access
+
+activate Researcher
+
+Researcher -> DMPSystem: Start New DMP
+DMPSystem -> InstitutionalSystems: Retrieve Existing Information
+InstitutionalSystems --> DMPSystem: Return Information
+DMPSystem -> Researcher: Prepopulate DMP
+Researcher -> DMPSystem: Complete DMP
+
+deactivate Researcher
+
+@enduml
+",n,6,4,4,n,y,9,8,9,y
+39,g19-alfred.txt,alfred,"As an OlderPerson, I want to have ALFRED to set limits in the games duration as I get bored easily.","@startuml
+actor OlderPerson
+actor ALFRED
+database GameSettings
+
+OlderPerson -> ALFRED: Request Game Duration Limit
+ALFRED -> ALFRED: Validate Request
+ALFRED -> GameSettings: Retrieve Current Game Settings
+GameSettings --> ALFRED: Return Current Game Settings
+ALFRED -> ALFRED: Set Game Duration Limit
+ALFRED -> GameSettings: Update Game Duration Limit
+GameSettings --> ALFRED: Confirmation
+
+@enduml
+",y,7,5,4,n,y,9,8,8,y
+40,g25-duraspace.txt,duraspace,"As a DAMS manager, I want to indicate to preservation managers aspects of a master file useful for monitoring its integrity, and impending obsolescence, including file size, creation date, file format and format version.","@startuml
+actor DAMSManager
+actor PreservationManagers
+database MasterFile
+
+DAMSManager -> PreservationManagers: Notify Aspects of Master File
+PreservationManagers -> DAMSManager: Acknowledge Notification
+
+DAMSManager -> MasterFile: Retrieve Master File Information
+MasterFile --> DAMSManager: Return Master File Information
+DAMSManager -> PreservationManagers: Provide Master File Information
+
+@enduml
+",y,10,5,6,n,y,10,7,7,y
+41,User Stories for Restaurant Management System.txt,Restaurant Management System,"As a manager, I want to save the menu each month.","@startuml
+actor Manager
+actor System
+database MonthlyMenus
+
+Manager -> System: Log In
+System -> System: Authenticate Manager
+System -> Manager: Provide Access
+
+activate Manager
+
+Manager -> System: Save Monthly Menu
+System -> MonthlyMenus: Retrieve Current Menu
+MonthlyMenus --> System: Return Current Menu
+System -> MonthlyMenus: Save Menu for Current Month
+MonthlyMenus --> System: Confirmation
+System -> Manager: Display Save Confirmation
+
+deactivate Manager
+
+@enduml
+",y,10,10,10,y,y,8,7,7,n
+42,g23-archivesspace.txt,archivesspace,"As an Archivist, I want to upload an EAD for import from within the frontend application.","@startuml
+actor Archivist
+actor FrontendApplication
+database ImportQueue
+
+Archivist -> FrontendApplication: Log In
+FrontendApplication -> FrontendApplication: Authenticate Archivist
+FrontendApplication -> Archivist: Provide Access
+
+activate Archivist
+
+Archivist -> FrontendApplication: Upload EAD for Import
+FrontendApplication -> FrontendApplication: Validate EAD Format
+FrontendApplication -> ImportQueue: Enqueue EAD for Import
+ImportQueue --> FrontendApplication: Confirmation
+FrontendApplication -> Archivist: Display Import Confirmation
+
+deactivate Archivist
+
+@enduml
+",n,6,7,6,n,y,10,9,8,y
+43,g22-rdadmp.txt,rdadmp,"As a PI, I want to plan what kind of data I want to record/store, so that I can ensure it will possible to store it.","@startuml
+actor PI
+actor System
+database DataPlanning
+
+PI -> System: Log In
+System -> System: Authenticate PI
+System -> PI: Provide Access
+
+activate PI
+
+PI -> System: Plan Data Recording/Storage
+System -> System: Record PI's Data Planning
+System -> DataPlanning: Save Data Planning Details
+DataPlanning --> System: Confirmation
+System -> PI: Display Planning Confirmation
+
+deactivate PI
+
+@enduml
+",n,4,3,3,n,y,10,10,10,y
+44,User Stories for Library Management System.txt,Library Management System,"As a member, I want to remove reservations so that I can cancel my reservation anytime I want.","@startuml
+actor Member
+actor System
+database ReservationDatabase
+
+Member -> System: Log In
+System -> System: Authenticate Member
+System -> Member: Provide Access
+
+activate Member
+
+Member -> System: Remove Reservation
+System -> ReservationDatabase: Retrieve Member's Reservations
+ReservationDatabase --> System: Return Reservations
+System -> Member: Display Current Reservations
+
+deactivate Member
+
+@enduml
+",y,10,10,10,y,y,10,9,9,y
+45,User Stories for Library Management System.txt,Library Management System,"As a librarian, I want to update pages for book information.","@startuml
+actor Librarian
+actor System
+database BookDatabase
+
+Librarian -> System: Log In
+System -> System: Authenticate Librarian
+System -> Librarian: Provide Access
+
+activate Librarian
+
+Librarian -> System: Update Pages for Book
+System -> BookDatabase: Retrieve Book Information
+BookDatabase --> System: Return Book Information
+System -> Librarian: Display Current Book Information
+
+Librarian -> System: Modify Page Information
+System -> BookDatabase: Update Page Information
+BookDatabase --> System: Confirmation
+System -> Librarian: Display Update Confirmation
+
+deactivate Librarian
+
+@enduml
+",y,10,10,10,y,y,10,10,10,y
+46,g23-archivesspace.txt,archivesspace,"As a user, I want frontend changes for managing enum lists.","@startuml
+actor User
+actor Frontend
+database EnumListConfiguration
+
+User -> Frontend: Request Enum List Management Changes
+Frontend -> Frontend: Authenticate User
+Frontend -> User: Provide Access
+
+activate User
+
+User -> Frontend: Specify Enum List Changes
+Frontend -> Frontend: Validate User Input
+Frontend -> EnumListConfiguration: Retrieve Current Configuration
+EnumListConfiguration --> Frontend: Return Current Configuration
+Frontend -> Frontend: Apply User Changes
+Frontend -> EnumListConfiguration: Update Configuration
+EnumListConfiguration --> Frontend: Confirmation
+Frontend -> User: Display Confirmation
+
+deactivate User
+
+@enduml
+",n,5,4,3,n,y,10,10,10,y
+47,g28-zooniverse.txt,zooniverse,"As an admin, I want to automatically validated the ingested contents for copyright infringement.","@startuml
+actor Admin
+actor System
+database IngestedContent
+
+Admin -> System: Log In
+System -> System: Authenticate Admin
+System -> Admin: Provide Access
+
+activate Admin
+
+Admin -> System: Initiate Copyright Validation
+System -> IngestedContent: Retrieve Ingested Content
+IngestedContent --> System: Return Ingested Content
+System -> System: Validate for Copyright Infringement
+System -> Admin: Display Validation Results
+
+deactivate Admin
+
+@enduml
+",y,10,10,10,y,y,9,10,10,y
+48,User Stories for Library Management System.txt,Library Management System,"As a manager, I want to delete library members.","@startuml
+actor Manager
+actor System
+database LibraryMembersDatabase
+
+Manager -> System: Log In
+System -> System: Authenticate Manager
+System -> Manager: Provide Access
+
+activate Manager
+
+Manager -> System: Delete Library Member
+System -> LibraryMembersDatabase: Retrieve Member Information
+LibraryMembersDatabase --> System: Return Member Information
+System -> LibraryMembersDatabase: Delete Member Record
+LibraryMembersDatabase --> System: Confirmation
+System -> Manager: Display Deletion Confirmation
+
+deactivate Manager
+
+@enduml
+",y,10,10,10,n,y,10,10,10,y
+49,g04-recycling.txt,recycling,"As a user, I want to link my email account to my profile, so that I can get a temporary password in case I forget my own one.","@startuml
+actor User
+actor System
+database UserProfile
+
+User -> System: Log In
+System -> System: Authenticate User
+System -> User: Provide Access
+
+activate User
+
+User -> System: Link Email Account
+System -> User: Provide Email Linking Interface
+User -> System: Enter Email Credentials
+System -> UserProfile: Link Email to User Profile
+UserProfile --> System: Confirmation
+System -> User: Display Linking Confirmation
+
+deactivate User
+
+@enduml
+",y,10,8,7,y,y,10,10,10,y
+50,User Stories for Restaurant Management System.txt,Restaurant Management System,"As a chef, I want to update the ingredients of the menu items.","@startuml
+actor Chef
+database MenuDatabase
+participant IngredientUpdater
+
+Chef -> IngredientUpdater: Request to update ingredients
+IngredientUpdater --> MenuDatabase: Retrieve current menu item ingredients
+MenuDatabase --> IngredientUpdater: Provide current ingredients
+IngredientUpdater -> IngredientUpdater: Update ingredients
+IngredientUpdater --> MenuDatabase: Save updated ingredients
+MenuDatabase --> IngredientUpdater: Confirmation of ingredient update
+IngredientUpdater --> Chef: Notify chef about successful update
+
+@enduml
+",y,10,10,10,y,y,10,10,10,y
+51,g04-recycling.txt,recycling,"As a user, I want to choose a flexible pick up time, so that I can more conveniently use the website.","@startuml
+actor User
+participant Website
+database OrderDatabase
+participant TimeSelectionModule
+
+User -> Website: Access order scheduling
+Website --> User: Present order scheduling options
+User -> TimeSelectionModule: Choose flexible pick-up time
+TimeSelectionModule --> OrderDatabase: Retrieve available time slots
+OrderDatabase --> TimeSelectionModule: Provide available time slots
+TimeSelectionModule --> User: Display available time slots
+User -> TimeSelectionModule: Select pick-up time
+TimeSelectionModule --> OrderDatabase: Reserve selected pick-up time
+OrderDatabase --> TimeSelectionModule: Confirmation of reservation
+TimeSelectionModule --> User: Confirm selected pick-up time
+
+@enduml
+",y,10,10,10,y,y,8,7,7,n
+52,User Stories for Restaurant Management System.txt,Restaurant Management System,"As a manager, I want to display orders by date.","@startuml
+actor Manager
+database OrderDatabase
+participant OrderDisplaySystem
+
+Manager -> OrderDisplaySystem: Request to display orders by date
+OrderDisplaySystem --> OrderDatabase: Retrieve orders by date
+OrderDatabase --> OrderDisplaySystem: Provide orders by date
+OrderDisplaySystem --> Manager: Display orders by date
+
+@enduml",y,10,10,10,y,y,8,7,7,y
+53,g26-racdam.txt,racdam,"As an archivist, I want to upload a single file.","@startuml
+actor Archivist
+database ArchiveDatabase
+participant FileUploader
+
+Archivist -> FileUploader: Upload a single file
+FileUploader --> ArchiveDatabase: Save the uploaded file
+ArchiveDatabase --> FileUploader: Confirmation of file upload
+
+@enduml
+",y,10,10,10,y,y,7,5,5,n
+54,User Stories for Library Management System.txt,Library Management System,"As a librarian, I want to create information about borrowed books.","@startuml
+actor Librarian
+database BorrowedBooksDatabase
+participant BookBorrower
+
+Librarian -> BookBorrower: Record book borrowing information
+BookBorrower --> BorrowedBooksDatabase: Save borrowed book details
+BorrowedBooksDatabase --> BookBorrower: Confirmation of book borrowing information
+
+@enduml
+",y,10,10,10,y,y,10,10,10,y
+55,User Stories for Library Management System.txt,Library Management System,"As a Staff, I want to edit book, so that I can correct book records those are faulty.","@startuml
+actor Staff
+database BookDatabase
+participant BookEditor
+
+Staff -> BookEditor: Request to edit a book
+BookEditor --> BookDatabase: Retrieve book details
+BookDatabase --> BookEditor: Provide book details
+BookEditor -> BookEditor: Edit book details
+BookEditor --> BookDatabase: Save updated book details
+BookDatabase --> BookEditor: Confirmation of update
+BookEditor --> Staff: Notify staff about successful update
+
+@enduml",y,10,10,10,y,y,10,10,10,y
+56,g27-culrepo.txt,culrepo,"As a library staff member, I want to upload large batches of items simultaneously, including descriptive metadata, so that I can offer service to authors efficiently.","@startuml
+actor LibraryStaff
+database LibraryDatabase
+participant BatchUploader
+participant MetadataProcessor
+
+LibraryStaff -> BatchUploader: Upload batch of items with metadata
+BatchUploader --> LibraryDatabase: Store items and metadata
+LibraryDatabase --> BatchUploader: Confirmation of upload
+
+BatchUploader -> MetadataProcessor: Process descriptive metadata
+MetadataProcessor --> LibraryDatabase: Retrieve descriptive metadata
+LibraryDatabase --> MetadataProcessor: Provide items with descriptive metadata
+MetadataProcessor --> BatchUploader: Confirm metadata processing
+
+@enduml",y,10,10,9,y,y,10,10,10,y
+57,g26-racdam.txt,racdam,"As an archivist, I want to access metadata and visual representations of index cards, so that I can use that information to assist researchers.","@startuml
+actor Archivist
+database IndexCardDatabase
+participant MetadataExtractor
+participant VisualRepresentationGenerator
+participant Researcher
+
+Archivist -> IndexCardDatabase: Retrieve index card metadata
+IndexCardDatabase --> Archivist: Provide index card metadata
+
+Archivist -> MetadataExtractor: Extract additional metadata
+MetadataExtractor --> IndexCardDatabase: Retrieve additional metadata
+IndexCardDatabase --> MetadataExtractor: Provide additional metadata
+
+Archivist -> VisualRepresentationGenerator: Generate visual representation
+VisualRepresentationGenerator --> IndexCardDatabase: Retrieve data for visual representation
+IndexCardDatabase --> VisualRepresentationGenerator: Provide data for visual representation
+
+Archivist -> Researcher: Provide metadata and visual representation
+Researcher --> Archivist: Acknowledge receipt of information
+
+@enduml",y,10,9,9,y,y,10,10,10,y
+58,User Stories for Restaurant Management System.txt,Restaurant Management System,"As a chef, I want to create dishes so that I can follow customer comments.","@startuml
+actor Chef
+database DishDatabase
+participant CustomerComments
+
+Chef -> DishDatabase: Create a new dish
+DishDatabase --> Chef: Confirm creation of the new dish
+
+Chef -> CustomerComments: Monitor customer comments for feedback
+CustomerComments --> Chef: Receive comments and feedback on dishes
+Chef -> DishDatabase: Update dishes based on feedback
+DishDatabase --> Chef: Confirm update of dishes
+
+@enduml",y,10,10,10,y,y,9,9,10,y
+59,g04-recycling.txt,recycling,"As a user, I want to be able to give my email ID, so that I can receive notifications for new events as they are posted.","@startuml
+actor User
+participant EventNotificationSystem
+database UserDatabase
+
+User -> EventNotificationSystem: Provide email ID for event notifications
+EventNotificationSystem --> UserDatabase: Save user's email ID
+UserDatabase --> EventNotificationSystem: Confirmation of email ID storage
+EventNotificationSystem --> User: Notify user about successful email registration
+
+User -> EventNotificationSystem: Receive notification for new events
+EventNotificationSystem --> User: Send notification about new events
+
+@enduml",y,10,7,5,y,y,10,10,10,y
+60,g22-rdadmp.txt,rdadmp,"As a researcher, I want to link research publications in the institutional repository or CRIS with DMP records, so that I can generate reports of research output resulting from a project.","@startuml
+actor Researcher
+database InstitutionalRepository
+database CRIS 
+participant DMP System
+participant ReportGenerator
+
+Researcher -> DMPSystem: Link DMP record with research project
+DMPSystem --> Researcher: Confirmation of link
+
+Researcher -> InstitutionalRepository: Link publication with DMP record
+InstitutionalRepository --> Researcher: Confirmation of link
+
+Researcher -> CRIS: Link publication with DMP record
+CRIS --> Researcher: Confirmation of link
+
+Researcher -> ReportGenerator: Generate research output report for a project
+ReportGenerator --> DMPSystem: Retrieve linked DMP records
+DMPSystem --> ReportGenerator: Provide linked DMP records
+ReportGenerator --> InstitutionalRepository: Retrieve linked publications
+InstitutionalRepository --> ReportGenerator: Provide linked publications
+ReportGenerator --> CRIS: Retrieve linked publications
+CRIS --> ReportGenerator: Provide linked publications
+ReportGenerator --> Researcher: Generate and present research output report
+
+@enduml
+",y,10,7,7,y,y,10,10,10,y
+61,g11-nsf.txt,nsf,"As a research participant, I want to make sure that the appearance of the prototype does not distract from the workflow, so that I can complete the user interview.","@startuml
+actor ResearchParticipant
+participant Prototype
+participant Interviewer
+
+ResearchParticipant -> Prototype: Engage with the prototype
+Prototype --> ResearchParticipant: Display the user interface
+ResearchParticipant -> Interviewer: Express concerns about distracting appearance
+Interviewer --> Prototype: Make adjustments to appearance
+Prototype --> Interviewer: Confirm appearance adjustments
+
+ResearchParticipant -> Prototype: Continue engaging with the prototype
+Prototype --> ResearchParticipant: Display updated user interface
+ResearchParticipant -> Interviewer: Acknowledge improved appearance
+Interviewer --> ResearchParticipant: Continue with the user interview
+
+@enduml
+",y,10,5,5,n,y,10,10,10,y
+62,User Stories for Library Management System.txt,Library Management System,"As a member, I want to calculate the fine for delayed returns by automatically.","@startuml
+actor Member
+database LoanDatabase
+participant FineCalculator
+
+Member -> LoanDatabase: Retrieve loan information
+LoanDatabase --> Member: Provide loan details
+Member -> FineCalculator: Request fine calculation for delayed returns
+FineCalculator --> LoanDatabase: Retrieve due date and return date
+LoanDatabase --> FineCalculator: Provide loan details
+FineCalculator --> Member: Calculate fine for delayed returns
+
+activate Member
+
+Member -> LoanDatabase: Return the overdue items
+LoanDatabase --> Member: Update return information
+Member -> FineCalculator: Request fine recalculation
+FineCalculator --> LoanDatabase: Retrieve updated return information
+LoanDatabase --> FineCalculator: Provide updated loan details
+FineCalculator --> Member: Recalculate fine for delayed returns
+
+deactivate Member
+@enduml
+",n,10,5,5,y,y,10,10,10,y
+63,User Stories for Restaurant Management System.txt,Restaurant Management System,"As a cook, I want to mark items unavailable, so that Waiter can inform customers.","@startuml
+actor Cook
+database MenuDatabase
+participant ItemAvailabilityManager
+actor Waiter
+
+Cook -> ItemAvailabilityManager: Mark item as unavailable
+ItemAvailabilityManager --> MenuDatabase: Update item availability status
+MenuDatabase --> ItemAvailabilityManager: Confirmation of update
+ItemAvailabilityManager --> Waiter: Notify waiter about item unavailability
+
+activate Cook
+
+Cook -> ItemAvailabilityManager: Mark another item as unavailable
+ItemAvailabilityManager --> MenuDatabase: Update item availability status
+MenuDatabase --> ItemAvailabilityManager: Confirmation of update
+ItemAvailabilityManager --> Waiter: Notify waiter about another item unavailability
+
+deactivate Cook
+@enduml
+",n,7,5,5,n,y,10,10,10,y
+64,User Stories for Restaurant Management System.txt,Restaurant Management System,"As a management user, I want to see the arrival and departure times of the employees.","@startuml
+actor ManagementUser
+database AttendanceDatabase
+participant AttendanceTracker
+
+ManagementUser -> AttendanceTracker: Request employee arrival and departure times
+AttendanceTracker --> AttendanceDatabase: Retrieve attendance data
+AttendanceDatabase --> AttendanceTracker: Provide attendance details
+AttendanceTracker --> ManagementUser: Display arrival and departure times
+
+activate ManagementUser
+deactivate ManagementUser
+
+@enduml",y,7,5,5,y,y,10,10,10,y
+65,g23-archivesspace.txt,archivesspace,"As an Archivist, I want to create and edit Agent records.","@startuml
+actor Archivist
+database AgentDatabase
+participant AgentEditor
+
+Archivist -> AgentEditor: Create new Agent record
+AgentEditor --> AgentDatabase: Save new Agent record
+AgentDatabase --> AgentEditor: Confirmation of save
+
+activate Archivist
+
+Archivist -> AgentEditor: Edit existing Agent record
+AgentEditor --> AgentDatabase: Update Agent record
+AgentDatabase --> AgentEditor: Confirmation of update
+
+deactivate Archivist
+@enduml",y,8,7,6,y,y,10,10,10,y
+66,g23-archivesspace.txt,archivesspace,"As an Archivist, I want to create and edit Event records.","@startuml
+actor Archivist
+database EventDatabase
+participant EventEditor
+
+Archivist -> EventEditor: Create new Event record
+EventEditor --> EventDatabase: Save new Event record
+EventDatabase --> EventEditor: Confirmation of save
+
+activate Archivist
+
+Archivist -> EventEditor: Edit existing Event record
+EventEditor --> EventDatabase: Update Event record
+EventDatabase --> EventEditor: Confirmation of update
+
+deactivate Archivist
+@enduml",y,8,7,6,y,y,10,10,10,y
+67,g17-cask.txt,cask,"As an app developer, I want to share a dataset type that I had previously deployed as part of an app.","@startuml
+actor AppDeveloper
+database AppDatabase
+participant DatasetSharingManager
+
+AppDeveloper -> DatasetSharingManager: Request to share a dataset type
+DatasetSharingManager --> AppDatabase: Retrieve information about the dataset type
+AppDatabase --> DatasetSharingManager: Provide dataset type details
+
+activate AppDeveloper
+
+AppDeveloper -> DatasetSharingManager: Confirm sharing of the dataset type
+DatasetSharingManager --> AppDatabase: Store sharing confirmation
+AppDatabase --> DatasetSharingManager: Confirmation of storage
+
+deactivate AppDeveloper
+@enduml",y,10,10,10,y,y,7,5,5,n
+68,User Stories for Restaurant Management System.txt,Restaurant Management System,"As a manager, I want to keep track of resources available so that I can manage inventory.","@startuml
+actor Manager
+database InventoryDatabase
+participant InventoryManager
+
+Manager -> InventoryManager: Access inventory management system
+InventoryManager --> Manager: Display current resources and inventory status
+
+activate Manager
+
+Manager -> InventoryManager: Update resources or inventory
+InventoryManager --> InventoryDatabase: Update inventory data
+InventoryDatabase --> InventoryManager: Confirmation of update
+InventoryManager --> Manager: Notify successful update
+
+deactivate Manager
+@enduml",y,10,10,10,y,y,8,8,8,n
+69,g02-federalspending.txt,federalspending,"As an Owner, I want to design a schedule from the UI SME, so that I know the potential timeline of the UI improvements wanted.","@startuml
+actor Owner
+database ScheduleDatabase
+participant UISME 
+participant ScheduleDesigner
+
+Owner -> UISME: Collaborate to gather UI improvement requirements
+UISME --> Owner: Provide UI improvement details
+
+activate Owner
+
+Owner -> ScheduleDesigner: Design a schedule based on UI improvement requirements
+ScheduleDesigner --> ScheduleDatabase: Store designed schedule
+ScheduleDatabase --> ScheduleDesigner: Confirmation of storage
+ScheduleDesigner --> Owner: Present the designed schedule
+
+deactivate Owner
+@enduml
+",y,10,5,5,y,y,10,10,10,y
+70,g24-unibath.txt,unibath,"As a depositor, I want to specify a disposal policy for my data, so that I do not accidentally breach laws or collaboration agreements.","@startuml
+actor Depositor
+database DataPolicyDatabase
+participant DisposalPolicyManager
+
+Depositor -> DisposalPolicyManager: Specify disposal policy for data
+DisposalPolicyManager --> DataPolicyDatabase: Store disposal policy details
+DataPolicyDatabase --> DisposalPolicyManager: Confirmation of storage
+
+activate Depositor
+
+Depositor -> DisposalPolicyManager: Review and confirm disposal policy
+DisposalPolicyManager --> Depositor: Acknowledge disposal policy confirmation
+
+deactivate Depositor
+@enduml",y,10,5,5,n,y,10,10,10,y
+71,g28-zooniverse.txt,zooniverse,"As a Zooniverse admin, I want to know when I should educate a volunteer.","@startuml
+actor ZooniverseAdmin
+database VolunteerData
+participant VolunteerMonitor
+
+ZooniverseAdmin -> VolunteerMonitor: Request volunteer activity monitoring
+VolunteerMonitor --> VolunteerData: Retrieve volunteer activity data
+VolunteerData --> VolunteerMonitor: Provide volunteer activity details
+
+activate ZooniverseAdmin
+
+ZooniverseAdmin -> VolunteerMonitor: Analyze volunteer activity for education needs
+VolunteerMonitor --> ZooniverseAdmin: Notify when education is needed
+
+deactivate ZooniverseAdmin
+@enduml",y,10,5,5,y,y,10,9,9,y
+72,g16-mis.txt,mis,"As a repository manager, I want to see a display of recent errors deduplicated for easy comprehension like Symplectic Elements provides.","@startuml
+actor RepositoryManager
+database ErrorDatabase
+participant ErrorDisplayTool
+
+RepositoryManager -> ErrorDisplayTool: Access error display tool
+ErrorDisplayTool --> RepositoryManager: Display recent errors deduplicated
+
+activate RepositoryManager
+
+RepositoryManager -> ErrorDisplayTool: Analyze recent errors
+ErrorDisplayTool --> ErrorDatabase: Retrieve recent error details
+ErrorDatabase --> ErrorDisplayTool: Provide recent error information
+ErrorDisplayTool --> RepositoryManager: Show deduplicated errors
+
+deactivate RepositoryManager
+@enduml
+",y,10,9,9,y,y,10,10,10,y
+73,g22-rdadmp.txt,rdadmp,"As an ethics manager, I want to be informed about the data, so that I can check for sensitivity of data.","@startuml
+actor EthicsManager
+database DataRepository
+participant DataAnalyzer
+
+EthicsManager -> DataAnalyzer: Request information about the data
+DataAnalyzer --> DataRepository: Retrieve data details
+DataRepository --> DataAnalyzer: Provide data information
+
+activate EthicsManager
+
+EthicsManager -> DataAnalyzer: Analyze data for sensitivity
+DataAnalyzer --> EthicsManager: Report on data sensitivity
+
+deactivate EthicsManager
+@enduml",y,10,8,7,y,y,10,10,10,y
+74,g25-duraspace.txt,duraspace,"As a repository manager, I want to indicate names related to the collection either as creator, source, or subject.","@startuml
+actor RepositoryManager
+database CollectionDatabase
+participant MetadataEditor
+
+RepositoryManager -> MetadataEditor: Access metadata editing tool
+MetadataEditor --> RepositoryManager: Display current metadata for the collection
+
+activate RepositoryManager
+
+RepositoryManager -> MetadataEditor: Specify names as creator, source, or subject
+MetadataEditor --> CollectionDatabase: Update collection metadata
+CollectionDatabase --> MetadataEditor: Confirmation of metadata update
+MetadataEditor --> RepositoryManager: Notify successful update
+
+deactivate RepositoryManager
+@enduml",y,10,10,10,y,y,9,8,8,n
+75,g27-culrepo.txt,culrepo,"As a patron, I want to email system provider to report issues and ask questions.","@startuml
+actor Patron
+participant EmailClient
+participant SystemProvider
+
+Patron -> EmailClient: Compose email to report issues and ask questions
+EmailClient --> Patron: Email composed and ready to send
+
+activate Patron
+
+Patron -> EmailClient: Send email to System Provider
+EmailClient --> SystemProvider: Transmit email
+
+activate SystemProvider
+
+SystemProvider -> EmailClient: Receive email from Patron
+EmailClient --> Patron: Email received confirmation
+SystemProvider --> Patron: Review and respond to email
+
+deactivate SystemProvider
+
+deactivate Patron
+@enduml",y,10,10,10,y,y,10,10,10,y
+76,g26-racdam.txt,racdam,"As a researcher I want clear citation information on each document, so that I can cite accurately in a publication.","@startuml
+actor Researcher
+database DocumentDatabase
+participant CitationGenerator
+
+Researcher -> DocumentDatabase: Access document information
+DocumentDatabase --> Researcher: Retrieve document details
+
+activate Researcher
+
+Researcher -> CitationGenerator: Request citation information
+CitationGenerator --> DocumentDatabase: Generate citation based on document details
+DocumentDatabase --> CitationGenerator: Provide document details
+CitationGenerator --> Researcher: Display citation information
+
+deactivate Researcher
+@enduml",y,10,10,10,y,y,10,10,10,y
+77,User Stories for Restaurant Management System.txt,Restaurant Management System,"As a manager, I want to track which employees sell the most number of products so that I can increase their salary.","@startuml
+actor Manager
+database SalesDatabase
+participant EmployeeTracker
+participant Employee
+participant SalaryManager
+
+Manager -> EmployeeTracker: Request sales performance tracking
+EmployeeTracker --> SalesDatabase: Retrieve sales data
+SalesDatabase --> EmployeeTracker: Provide sales data
+
+activate Manager
+
+Manager -> EmployeeTracker: Identify top-performing employees
+EmployeeTracker --> Employee: Notify employees about sales performance evaluation
+
+activate Employee
+
+Employee --> SalesDatabase: Provide additional sales details if needed
+SalesDatabase --> Employee: Provide required information
+
+deactivate Employee
+
+EmployeeTracker --> SalaryManager: Request salary increase for top-performing employees
+SalaryManager --> EmployeeTracker: Confirm salary increase requests
+EmployeeTracker --> Manager: Notify successful salary increases
+
+deactivate Manager
+@enduml",y,10,10,10,y,y,9,8,8,n
+78,g14-datahub.txt,datahub,"As a Consumer, I want to load a Data Package from R, so that that I can immediately start playing with it.","@startuml
+actor Consumer
+database REnvironment
+participant DataPackageManager
+participant DataPackage
+
+Consumer -> REnvironment: Load R environment
+REnvironment --> Consumer: R environment loaded successfully
+
+activate Consumer
+
+Consumer -> DataPackageManager: Request to load Data Package
+DataPackageManager --> REnvironment: Retrieve Data Package details
+REnvironment --> DataPackageManager: Provide Data Package details
+
+activate DataPackageManager
+
+DataPackageManager -> DataPackage: Load Data Package into R
+DataPackage --> DataPackageManager: Confirm Data Package loaded
+DataPackageManager --> Consumer: Notify successful Data Package load
+
+deactivate DataPackageManager
+
+deactivate Consumer
+@enduml
+",y,10,10,10,y,y,10,10,10,y
+79,User Stories for Library Management System.txt,Library Management System,"As a librarian, I want to add new books to book list.","@startuml
+actor Librarian
+database BookDatabase
+participant BookListManager
+
+Librarian -> BookListManager: Request to add new books
+BookListManager --> Librarian: Display current book list
+
+activate Librarian
+
+Librarian -> BookListManager: Provide details of new books
+BookListManager --> BookDatabase: Add new books to the database
+BookDatabase --> BookListManager: Confirmation of book addition
+BookListManager --> Librarian: Notify successful addition
+
+deactivate Librarian
+@enduml",y,10,10,10,y,y,10,10,10,y
+80,g19-alfred.txt,alfred,"As an OlderPerson, I want to use ALFRED to control the TV and radio.","@startuml
+actor OlderPerson
+participant ALFRED
+participant TV
+participant Radio
+
+OlderPerson -> ALFRED: Request to control TV and radio
+ALFRED --> OlderPerson: Display available control options
+
+activate OlderPerson
+
+OlderPerson -> ALFRED: Select ""TV"" control option
+ALFRED --> TV: Send command to control TV
+TV --> ALFRED: Acknowledge TV control
+
+OlderPerson -> ALFRED: Select ""Radio"" control option
+ALFRED --> Radio: Send command to control radio
+Radio --> ALFRED: Acknowledge radio control
+
+deactivate OlderPerson
+
+@enduml",y,7,10,10,y,y,10,10,10,y
+81,g03-loudoun.txt,loudoun,"As a Staff member, I want to Manage Bonds, so that I can track and manage bonds throughout the lifecycle of the project until release.","@startuml
+actor StaffMember
+database BondDatabase
+participant BondManager
+
+StaffMember -> BondManager: Request to manage bonds
+BondManager --> StaffMember: Display available bond options
+
+activate StaffMember
+
+StaffMember -> BondManager: Select a bond option
+BondManager --> BondDatabase: Retrieve bond details
+BondDatabase --> BondManager: Provide bond information
+
+activate BondManager
+
+BondManager -> BondManager: Perform bond management activities
+BondManager --> BondDatabase: Update bond information
+BondDatabase --> BondManager: Confirmation of bond update
+BondManager --> StaffMember: Notify successful bond management
+
+deactivate BondManager
+
+deactivate StaffMember
+@enduml",y,10,9,10,y,y,10,10,10,y
+82,User Stories for Restaurant Management System.txt,Restaurant Management System,"As a chef, I want to update the allergy warnings of menu items.","@startuml
+actor Chef
+database MenuDatabase
+participant AllergyWarningManager
+
+Chef -> AllergyWarningManager: Request to update allergy warnings
+AllergyWarningManager --> Chef: Display current allergy warnings
+
+activate Chef
+
+Chef -> AllergyWarningManager: Specify new allergy warnings for menu items
+AllergyWarningManager --> MenuDatabase: Update allergy warnings
+MenuDatabase --> AllergyWarningManager: Confirmation of allergy warnings update
+AllergyWarningManager --> Chef: Notify successful update
+
+deactivate Chef
+@enduml",y,10,10,10,y,y,8,6,6,n
+83,User Stories for Restaurant Management System.txt,Restaurant Management System,"As an employee, I want to change orders of a table.","@startuml
+actor Employee
+database TableDatabase
+participant TableOrderManager
+
+Employee -> TableOrderManager: Request to change table orders
+TableOrderManager --> Employee: Display current table orders
+
+activate Employee
+
+Employee -> TableOrderManager: Specify new order for the table
+TableOrderManager --> TableDatabase: Update table orders
+TableDatabase --> TableOrderManager: Confirmation of order update
+TableOrderManager --> Employee: Notify successful order change
+
+deactivate Employee
+@enduml",y,10,10,10,y,y,10,10,10,y
+84,User Stories for Library Management System.txt,Library Management System,"As a library manager, I want to know which books are borrowed most so that I can bring the further copies of the books.","@startuml
+actor LibraryManager
+database BorrowingDatabase
+participant BookCatalog
+participant PurchaseManager
+
+LibraryManager -> BorrowingDatabase: Retrieve borrowing statistics
+BorrowingDatabase --> LibraryManager: Provide borrowing statistics
+
+activate LibraryManager
+
+LibraryManager -> BookCatalog: Identify most borrowed books
+BookCatalog --> BorrowingDatabase: Retrieve book details for most borrowed books
+
+activate PurchaseManager
+
+BorrowingDatabase --> PurchaseManager: Request to purchase additional copies
+PurchaseManager --> BorrowingDatabase: Confirm purchase request
+BorrowingDatabase --> LibraryManager: Notify about the purchase request
+
+deactivate PurchaseManager
+
+deactivate LibraryManager
+@enduml",y,10,6,6,y,y,10,10,10,y
+85,User Stories for Library Management System.txt,Library Management System,"As a librarian, I want to edit suggestion list.","@startuml
+actor Librarian
+database SuggestionDatabase
+participant SuggestionEditor
+
+Librarian -> SuggestionEditor: Access suggestion list editor
+SuggestionEditor --> Librarian: Display current suggestion list
+
+activate Librarian
+
+Librarian -> SuggestionEditor: Edit suggestions (add, remove, modify)
+SuggestionEditor --> SuggestionDatabase: Update suggestion list
+SuggestionDatabase --> SuggestionEditor: Confirmation of update
+SuggestionEditor --> Librarian: Notify successful edit
+
+deactivate Librarian
+@enduml",n,10,4,4,y,y,10,10,10,y
+86,g27-culrepo.txt,culrepo,"As a Cornell faculty member, I want to have some control over how items within my collection sort in collection contents lists, so that I can control how my work is presented.","@startuml
+actor FacultyMember
+participant CollectionManagementTool
+database CollectionDatabase
+participant SortingManager
+
+FacultyMember -> CollectionManagementTool: Access collection management tool
+CollectionManagementTool --> FacultyMember: Display collection contents
+
+activate FacultyMember
+
+FacultyMember -> CollectionManagementTool: Choose sorting preferences
+CollectionManagementTool --> SortingManager: Apply sorting preferences
+SortingManager --> CollectionDatabase: Retrieve sorted collection contents
+CollectionDatabase --> SortingManager: Provide sorted collection contents
+SortingManager --> CollectionManagementTool: Display sorted collection contents
+
+deactivate FacultyMember
+@enduml",y,10,10,10,y,y,10,10,10,y
+87,g25-duraspace.txt,duraspace,"As a DAMS manager, I want to know when permitted and restricted acts and/or their active dates are modified.","@startuml
+actor DAMSManager
+database DAMSDatabase
+participant AuditTrail
+participant PermissionManager
+
+DAMSManager -> PermissionManager: Modify permitted/restricted acts or active dates
+PermissionManager --> DAMSDatabase: Update permissions and active dates
+DAMSDatabase --> AuditTrail: Log modification details
+
+activate DAMSManager
+
+DAMSDatabase --> PermissionManager: Confirmation of modification
+PermissionManager --> DAMSManager: Notify successful modification
+
+deactivate DAMSManager
+@enduml",n,5,3,2,n,y,10,10,10,y
+88,User Stories for Restaurant Management System.txt,Restaurant Management System,"As a restaurant manager, I want to see weekly reports.","@startuml
+actor Manager
+database SalesDatabase
+participant ReportGenerator
+participant ReportViewer
+
+Manager -> ReportGenerator: Request weekly sales report
+ReportGenerator --> SalesDatabase: Retrieve sales data for the week
+SalesDatabase --> ReportGenerator: Provide sales data
+
+activate Manager
+
+ReportGenerator --> ReportViewer: Generate and display weekly sales report
+
+deactivate Manager
+@enduml",y,10,10,10,y,y,10,10,10,y
+89,g18-neurohub.txt,neurohub,"As a user, I want to sync events created in NeuroHub with a web-based Calendar such as Google Calendar.","@startuml
+actor User
+participant NeuroHub
+database EventDatabase
+participant CalendarSyncService
+participant GoogleCalendar
+
+User -> NeuroHub: Create event
+NeuroHub --> User: Event created successfully
+
+activate User
+
+User -> CalendarSyncService: Request sync with Google Calendar
+CalendarSyncService --> NeuroHub: Retrieve user's events
+NeuroHub --> EventDatabase: Fetch event details
+
+activate CalendarSyncService
+
+CalendarSyncService -> GoogleCalendar: Sync event with Google Calendar
+GoogleCalendar --> CalendarSyncService: Confirmation of sync
+
+deactivate CalendarSyncService
+
+CalendarSyncService --> User: Notify user of successful sync
+
+deactivate User
+@enduml",y,7,10,10,n,y,10,10,10,y
+90,g11-nsf.txt,nsf,"As a team member, I want to know what visual design related tasks we might need to plan for this sprint, so that I can assign tasks as necessary.","@startuml
+actor TeamMember
+participant SprintPlanningTool
+database TaskDatabase
+participant VisualDesignTasksManager
+
+TeamMember -> SprintPlanningTool: Access sprint planning tool
+SprintPlanningTool --> TeamMember: Display available tasks
+
+activate TeamMember
+
+TeamMember -> SprintPlanningTool: Filter tasks by visual design
+SprintPlanningTool --> TaskDatabase: Retrieve visual design-related tasks
+TaskDatabase --> SprintPlanningTool: Provide visual design tasks
+
+deactivate TeamMember
+
+activate VisualDesignTasksManager
+
+SprintPlanningTool -> VisualDesignTasksManager: Analyze visual design tasks
+VisualDesignTasksManager --> SprintPlanningTool: Provide insights and recommendations
+
+deactivate VisualDesignTasksManager
+@enduml",y,10,8,10,y,y,10,10,10,y
+91,g16-mis.txt,mis,"As a repoadmin, I want to have users to be presented with a license or a selection of licenses, specific to the collection, and deposit to be denied if the submitter does not accept the license.","@startuml
+actor RepoAdmin
+participant LicenseManager
+participant User
+participant DepositHandler
+
+RepoAdmin -> LicenseManager: Configure licenses for the collection
+LicenseManager --> RepoAdmin: Licenses configured successfully
+
+activate RepoAdmin
+
+RepoAdmin -> User: Request deposit for a collection
+User --> DepositHandler: Initiate deposit process
+
+activate User
+activate DepositHandler
+
+DepositHandler -> LicenseManager: Retrieve collection-specific license(s)
+LicenseManager --> DepositHandler: Provide license options
+
+DepositHandler -> User: Present license options for acceptance
+User --> DepositHandler: Select a license
+
+alt User accepts the license
+    DepositHandler -> DepositHandler: Proceed with deposit
+    DepositHandler --> User: Deposit accepted
+else User does not accept the license
+    DepositHandler --> User: Deposit denied due to license non-acceptance
+end
+
+deactivate User
+deactivate DepositHandler
+
+deactivate RepoAdmin
+@enduml",n,4,2,1,n,y,10,10,10,y
+92,User Stories for Restaurant Management System.txt,Restaurant Management System,"As an employee, I want to add a new information about myself to the my employee data","@startuml
+actor Employee
+database EmployeeDatabase
+participant EmployeeProfileManager
+
+Employee -> EmployeeProfileManager: Request to add new information
+EmployeeProfileManager --> Employee: Prompt for new information
+
+activate Employee
+
+Employee -> EmployeeProfileManager: Provide new information
+EmployeeProfileManager --> EmployeeDatabase: Update employee data
+
+activate EmployeeDatabase
+
+EmployeeDatabase --> EmployeeProfileManager: Confirmation of data update
+EmployeeProfileManager --> Employee: Notify successful update
+
+deactivate EmployeeDatabase
+
+deactivate Employee
+@enduml",y,10,10,10,y,y,10,10,10,y
+93,User Stories for Library Management System.txt,Library Management System,"As a customer, I want to see the availability of books.","@startuml
+actor Customer
+database LibraryDatabase
+participant BookCatalog
+
+Customer -> BookCatalog: Request book availability
+BookCatalog --> LibraryDatabase: Check book availability
+LibraryDatabase --> BookCatalog: Availability status
+
+activate Customer
+activate BookCatalog
+activate LibraryDatabase
+
+BookCatalog -> Customer: Display book availability status
+
+deactivate BookCatalog
+deactivate LibraryDatabase
+deactivate Customer
+@enduml
+",y,10,10,10,y,y,10,10,10,y
+94,g13-planningpoker.txt,planningpoker,"As a user, I want to have nice error pages when something goes wrong, so that I can trust the system and its developers.","@startuml
+actor User
+participant System
+participant ErrorHandling
+
+User -> System: Request to perform an action
+System --> User: Perform action or encounter an error
+
+activate System
+
+System -> ErrorHandling: Identify the error
+ErrorHandling --> System: Provide error details and display nice error page
+System --> User: Show nice error page with details
+
+deactivate System
+@enduml",n,8,4,7,n,y,10,10,10,y
+95,User Stories for Restaurant Management System.txt,Restaurant Management System,"As a restaurant manager, I want to create, monitor and delegate tasks to workers to increase labor management efficiency.","@startuml
+actor Manager
+participant TaskManager
+participant Worker
+
+Manager -> TaskManager: Create task for workers
+TaskManager --> Manager: Task created successfully
+
+activate Manager
+
+Manager -> TaskManager: Monitor task status
+TaskManager --> Manager: Display task status
+
+deactivate Manager
+
+activate TaskManager
+
+TaskManager -> Worker: Assign task to worker
+Worker --> TaskManager: Acknowledge task assignment
+TaskManager --> Manager: Notify task assignment
+
+deactivate TaskManager
+
+@enduml",y,10,1,1,n,y,10,10,10,y
+96,g27-culrepo.txt,culrepo,"As a DB/IR administrator, I want to see list of subscribers for specified report in order research missing report complaints.","@startuml
+actor Administrator
+database ReportDatabase
+participant SubscriptionManager
+participant User
+
+Administrator -> SubscriptionManager: Request list of subscribers for specified report
+SubscriptionManager --> Administrator: List of subscribers
+
+activate Administrator
+
+Administrator -> ReportDatabase: Investigate missing report complaints
+ReportDatabase --> Administrator: Report details and complaints
+
+loop for each subscriber in the list
+    activate SubscriptionManager
+    SubscriptionManager -> User: Notify about missing report
+    User --> SubscriptionManager: Acknowledge notification
+    deactivate SubscriptionManager
+end loop
+
+deactivate Administrator
+@enduml",n,10,2,1,n,y,10,10,10,y
+97,User Stories for Library Management System.txt,Library Management System,"As a staff, I want to add books with unique id.","@startuml
+actor Staff
+database LibraryDatabase
+participant BookCatalog
+
+Staff -> BookCatalog: Request to add a book with unique ID
+BookCatalog --> Staff: Prompt for book details
+
+activate Staff
+
+Staff -> BookCatalog: Provide book details (title, author, etc.)
+BookCatalog --> LibraryDatabase: Check for existing books with the same ID
+
+activate LibraryDatabase
+
+LibraryDatabase --> BookCatalog: No existing book with the same ID found
+BookCatalog --> LibraryDatabase: Add new book with unique ID
+
+deactivate LibraryDatabase
+
+LibraryDatabase --> BookCatalog: Confirmation of successful book addition
+BookCatalog --> Staff: Confirmation message
+
+deactivate Staff
+@enduml",y,10,10,10,y,y,10,10,10,y
+98,g16-mis.txt,mis,"As a DigitalRecords Archivist, I want to expose the descriptive record for each ETD item for re-use external to Fedora.","@startuml
+actor Archivist
+database FedoraRepository
+participant DescriptiveRecordService
+participant ExternalSystem
+
+Archivist -> FedoraRepository: Retrieve ETD item descriptive record
+FedoraRepository --> Archivist: Descriptive record for ETD item
+
+activate Archivist
+
+Archivist -> DescriptiveRecordService: Expose descriptive record
+DescriptiveRecordService --> Archivist: Descriptive record exposed successfully
+
+deactivate Archivist
+
+activate DescriptiveRecordService
+
+DescriptiveRecordService -> ExternalSystem: Notify external system
+ExternalSystem --> DescriptiveRecordService: Acknowledge notification
+
+deactivate DescriptiveRecordService
+
+@enduml",y,10,2,1,n,y,10,8,9,y
+99,g26-racdam.txt,racdam,"As an archivist, I want to see what a particular user has downloaded, so that I can track use of assets.","@startuml
+actor Archivist
+database DownloadLogDatabase
+participant User
+participant AssetRepository
+
+Archivist -> DownloadLogDatabase: Request user download log
+DownloadLogDatabase --> Archivist: Provide download log
+
+activate Archivist
+
+Archivist -> User: Identify the user to track
+User --> DownloadLogDatabase: Request download history
+
+DownloadLogDatabase --> User: Provide download history
+
+deactivate Archivist
+
+activate User
+
+User -> AssetRepository: Request asset download
+AssetRepository --> User: Provide requested asset
+
+User -> DownloadLogDatabase: Log download
+
+deactivate User
+
+@enduml",y,10,10,10,y,y,10,10,10,y
+100,g28-zooniverse.txt,zooniverse,"As a user, I want to take a picture or upload an image, so that I am recommended with videos related to that picture or image.","@startuml
+actor User
+participant App
+database ImageDatabase
+participant RecommendationEngine
+participant VideoProvider
+
+User -> App: Open the application
+App --> User: Display home screen
+
+User -> App: Choose 'Take Picture' or 'Upload Image'
+App --> User: Open camera or file picker
+
+User -> App: Capture or select an image
+App --> ImageDatabase: Store image
+
+activate ImageDatabase
+
+ImageDatabase --> App: Image stored successfully
+
+deactivate ImageDatabase
+
+App -> RecommendationEngine: Request video recommendations for the image
+RecommendationEngine --> ImageDatabase: Retrieve image information
+
+activate ImageDatabase
+
+ImageDatabase --> RecommendationEngine: Image details
+
+deactivate ImageDatabase
+
+RecommendationEngine -> VideoProvider: Get recommended videos
+VideoProvider --> RecommendationEngine: List of recommended videos
+
+activate VideoProvider
+
+RecommendationEngine --> App: Display recommended videos
+
+deactivate VideoProvider
+
+App --> User: Show recommended videos
+
+@enduml",y,10,8,10,y,y,10,10,10,y
